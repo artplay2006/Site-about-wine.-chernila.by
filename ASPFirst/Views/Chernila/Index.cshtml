@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Чернила";
+}
+<div class="container" style="padding-bottom:100px">
+    <h1 class="text-center" style="margin-left:30px; margin-top:35px; width: 842px; height: 132px; left: 230px; top: 125px; font-family: 'Kyiv*Type Titling'; font-style: normal; font-weight: 350; font-size: 40px; line-height: 48px; color: #FFFFFF;">
+        Смотрю в окно и понимаю<br>кто я где я что я
+    </h1>
+    <div class="row"  style="margin-top: 35px;" >
+        <div class="col-xxl-4">
+            <div class="card" style="background-color:#602F61; border: 4px solid black;">
+                <img src="~/images/яблокинаснегу.jpg" class="card-img-top" height="400" alt="Товар 1" style="border-bottom: 4px solid black;">
+                <div class="card-body" style="text-align:center;">
+                    <h5 class="card-title" style="color:white;">Зимнее яблоко</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4">
+            
+            <div class="card" style="background-color:#602F61; border: 4px solid black;">
+                <a asp-area="" asp-controller="Bottle" asp-action="Index"><img src="~/images/зимнееяблоко.jpg" class="card-img-top" height="400" alt="Товар 1" style="border-bottom: 4px solid black;"></a>
+                <div class="card-body" style="text-align:center;">
+                    <h5 class="card-title" style="color:white;"><a class="name-in-card" asp-area="" asp-controller="Bottle" asp-action="Index">Яблоки на снегу</a></h5>
+                </div>
+                </div>
+            
+        </div>
+        <div class="col-xxl-4">
+            <div class="card" style="background-color:#602F61; border: 4px solid black;">
+                <img src="~/images/шарм.jpg" class="card-img-top" height="400" alt="Товар 1" style="border-bottom: 4px solid black;">
+                <div class="card-body" style="text-align:center;">
+                    <h5 class="card-title" style="color:white;">Шарм</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

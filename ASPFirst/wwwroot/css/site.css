@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Kyiv*Type Titling';
+    src: url('/fonts/KyivTypeTitling-Regular.ttf');
+}
+html {
+    /*height: 100%;
+    position: relative;*/
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2B2854;
+    background-image: url('/images/fontimage.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+header {
+    background-color: #602F61;
+    display: flex; /* все элементы хедера горизонтально */
+    justify-content: center; /* горизонтальное центрирование */
+    align-items: center; /* веритикальное центрирование */
+    border-bottom: 5px solid black; /* Нижняя граница черного цвета */
+}
+header img{
+    width:138px;
+    height:84px;
+    margin-right:50px;
+}
+    header nav {
+        display: flex; /* позволяtn всем элементам автоматически распределяться по доступному пространств */
+        margin-left: 50px;
+    }
+header nav ul {
+    list-style-type: none; /* это для удаления точкек у элементов списка */
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    display: inline; /* каждый элемент li в одной строке */
+    margin-right: 50px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none; /* подчеркивание типо ссылка */
+    font-family: Impact;
+    font-size:25px;
+}
+footer {
+    border-top: 5px solid black;
+    background-color: #602F61;
+    /*margin-top: auto; */ /*внутри flex-контейнера, этот элемент будет выравниваться в самом нижнем положении контейнера*/
+    display: flex; /* все элементы хедера горизонтально */
+    justify-content: center; /* горизонтальное центрирование */
+    align-items: center; /* веритикальное центрирование */
+    /*margin-top: 100%;*/
+    bottom: 0;
+    width: 100%;
+}
+.homepage {
+    flex: 1;
+    background-image: url('/images/fontimage.png');
+    background-size: 100% 100%;/* cover */
+}
+.name-in-card {
+    /*style ="text-decoration:none; color:white"*/
+    text-decoration:none;
+    color:white;
+}
+.product-details {
+    display: flex;
+    /*align-items: center;*/
+    color: white;
+    padding-bottom: 52px;
+}
+
+.product-image {
+    flex: 1;
+    margin-right: 20px;
+    
+}
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.product-info {
+    flex: 2;
+    background-color: rgba(0, 0, 0, 0.6); /* Черный цвет с 50% прозрачности */
+    padding:2% 2%;
+}
+
+/* Дополнительные стили по вашему усмотрению */
