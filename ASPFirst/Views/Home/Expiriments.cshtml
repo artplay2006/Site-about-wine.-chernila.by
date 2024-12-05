@@ -1,0 +1,73 @@
+﻿@*таким спосабом делается коментарий
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Эксперименты";
+    string name = "artem";
+    string who = "the god";
+    int a = 3, hour = DateTime.Now.Hour;
+    string[] people = { "Tom", "Sam", "Bob" };
+}
+@functions
+{
+    public int Sum(int a, int b)
+    {
+        return a + b;
+    }
+    public int Square(int n) => n * n;
+}
+@section Footer {
+           Copyright© Metanit.com, @DateTime.Now.Year. All rights reserved
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>METANIT.COM</title>
+    <meta charset="utf-8" />
+</head>
+<body style="color:yellow">
+    @* использование кода C# внутри html *@
+    <h2>Time: @DateTime.Now.ToShortTimeString()</h2>
+    <p>Date: @DateTime.Now.ToLongDateString()</p>
+    <p>@(20+30)</p>
+    @* чтобы @ воспринимался как символ который нужно вывести(а не как код C#) надо его написать два раза @@ и он выведится один раз @ *@
+    <p>@@DateTime.Now =@DateTime.Now.ToLongDateString()</p>
+    <h1>Creator of site @name, he is @who</h1>
+    <p>@(a+10)</p>
+    @* if'ы в html'e *@
+    @if (hour < 12)
+    {
+        <h2>it's morning</h2>
+    }
+    else if (hour > 22)
+    {
+        <h2>it's night</h2>
+    }
+    else
+    {
+        <h2>it's day</h2>
+    }
+
+    <ul>
+        @for (var i = 0; i < people.Length; i++)
+        {
+            <li>@people[i]</li>
+        }
+    </ul>
+    <p>Sum of 5 and 4: <b> @Sum(5, 4)</b></p>
+    <p>Square of 4: <b>@Square(4)</b></p>
+    <h4>ViewData["Title"] = @ViewData["Title"]</h4>
+    <h4>ViewData["Message"] = @ViewData["Message"]</h4>
+    <h4>ViewBag.Language = @ViewBag.Language</h4>
+
+    @* эту залупу необязательно писать свурху html, можно и внутри *@
+    @model string[]
+    <h2>Count: @Model.Length</h2>
+    <ul>
+        @foreach (string person in Model)
+        {
+            <li>@person</li>
+        }
+    </ul>
+</body>
+</html>

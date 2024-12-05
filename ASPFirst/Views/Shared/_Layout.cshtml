@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @* значение ViewData["Title"] берется из других файлов(представлений или контроллеров) *@
     <title>@ViewData["Title"] - Чернила.by</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -30,7 +31,7 @@
     <footer>
 
         <p style="color:white; font-size:25px; font-family: 'Kyiv*Type Titling';">и только попробуй сказать что чернила говно</p>@* <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
-        
+        @RenderSection("Footer", required: false) @* секция Footer должна быть определена в файле представления(например в Expiriments) *@
     </footer>
 
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script>

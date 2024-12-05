@@ -1,7 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();// добавляем сервисы MVC
+// Services. имееет еще куча методов(Add'ов) для добавления каких-то хуевин для проекта
 
 var app = builder.Build();
 
@@ -20,8 +21,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// добавляем поддержку контроллеров, которые располагаются в области
+app.MapControllerRoute(
+            name: "Account",
+            // {area:exists}, это означает ограничение на параметр area, которое требует, чтобы значение параметра area было указано и не являлось пустым
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+          );
+// устанавливаем сопоставление маршрутов с контроллерами
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");// здесь задается контроллер который будет отрабатывать при запуске программы
+
+
 
 app.Run();
